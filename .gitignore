@@ -123,3 +123,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/.idea/100-days-of-code.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml
+/.idea/.gitignore
