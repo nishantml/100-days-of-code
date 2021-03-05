@@ -1,4 +1,3 @@
-
 """
 3. Longest Substring Without Repeating Characters
 
@@ -54,3 +53,20 @@ class Solution:
                     Hash = []
                     break
         return max(max_count)
+
+    def lengthOfLongestSubstring1(self, s: str) -> int:
+        """Optimal solution"""
+        maxLen = 0
+        current = ""
+
+        for each in s:
+
+            if each not in current:
+                current += each
+            else:
+                maxLen = max(maxLen, len(current))
+                idx = current.index(each)
+                current = current[idx + 1:] + each
+
+        maxLen = max(maxLen, len(current))
+        return maxLen
