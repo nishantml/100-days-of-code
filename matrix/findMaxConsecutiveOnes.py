@@ -35,3 +35,11 @@ class Solution:
 
         maxLen = max(len(Hash), maxLen)
         return maxLen
+
+    def findMaxConsecutiveOnes2(self, nums: List[int]) -> int:
+        """Optimal way"""
+        for i in range(1, len(nums)):
+            if nums[i - 1] != 0 and nums[i] != 0:
+                nums[i] = nums[i - 1] + 1
+        print(nums)
+        return max(nums)
