@@ -4,8 +4,6 @@ Given the head of a linked list, remove the nth node from the end of the list an
 
 Follow up: Could you do this in one pass?
 
-
-
 Example 1:
 
 
