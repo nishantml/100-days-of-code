@@ -24,6 +24,8 @@ All the integers in nums are unique.
 nums is sorted in an ascending order.
 
 """
+from typing import List
+
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
