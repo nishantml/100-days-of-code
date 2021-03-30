@@ -7,8 +7,6 @@ Notice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in 
 
 Given the sorted rotated array nums that may contain duplicates, return the minimum element of this array.
 
-
-
 Example 1:
 
 Input: nums = [1,3,5]
