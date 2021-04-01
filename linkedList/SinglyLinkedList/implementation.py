@@ -1,10 +1,16 @@
 class Node:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=None):
         self.val = val
-        self.next = next
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = Node()
+        self.length = 0
 
     def append_to_tail_node(self, data):
-        curr = self
+        curr = self.head
         new = Node(data)
 
         while curr.next is not None:
@@ -12,16 +18,32 @@ class Node:
         curr.next = new
         return self
 
+    def append_to_head_node(self, data):
+        curr = self.head
+        new = Node(data)
+        if self.head.next is None:
+            self.head.next = new
+            return self
+        temp = self.head.next
+        self.head.next = new
+        new.next = temp
+
+        return self
+
     def display(self):
-        curr = self
-        lst = []
-        while curr:
-            lst.append(curr.val)
-            curr = curr.next
-        return lst
+        elems = []
+        cur_node = self.head
+        while cur_node.next is not None:
+            cur_node = cur_node.next
+            elems.append(cur_node.val)
+        return elems
 
 
-node = Node(10)
+node = LinkedList()
+node.append_to_tail_node(10)
 node.append_to_tail_node(11)
 node.append_to_tail_node(12)
+node.append_to_head_node(9)
+node.append_to_head_node(8)
+node.append_to_head_node(7)
 print(node.display())
