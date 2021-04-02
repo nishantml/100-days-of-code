@@ -30,6 +30,16 @@ class LinkedList:
 
         return self
 
+    def data_at_index(self, index):
+        cur_node = self.head
+        count = 1
+        while cur_node.next is not None:
+            cur_node = cur_node.next
+            if count == index:
+                return cur_node.val
+            count += 1
+        return -1
+
     def display(self):
         elems = []
         cur_node = self.head
@@ -47,3 +57,5 @@ node.append_to_head_node(9)
 node.append_to_head_node(8)
 node.append_to_head_node(7)
 print(node.display())
+
+print(node.data_at_index(2))
