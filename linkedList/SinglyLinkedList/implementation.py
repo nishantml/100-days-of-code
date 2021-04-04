@@ -63,7 +63,7 @@ node.append_to_tail_node(12)
 node.append_to_head_node(9)
 node.append_to_head_node(8)
 node.append_to_head_node(7)
-print(node.display())
+
 node.delete_first_node()
 node.delete_first_node()
 print(node.display())
