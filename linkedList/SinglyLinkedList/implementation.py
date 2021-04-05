@@ -37,6 +37,17 @@ class LinkedList:
         self.head.next = curr.next.next
         return self
 
+    def delete_last_node(self):
+        curr = self.head
+        if curr.next is Node:
+            return self
+        prev = curr.next
+        while curr.next is not None:
+            prev = curr
+            curr = curr.next
+        prev.next = None
+        return self
+
     def data_at_index(self, index):
         cur_node = self.head
         count = 1
@@ -60,12 +71,14 @@ node = LinkedList()
 node.append_to_tail_node(10)
 node.append_to_tail_node(11)
 node.append_to_tail_node(12)
-node.append_to_head_node(9)
-node.append_to_head_node(8)
-node.append_to_head_node(7)
-
-node.delete_first_node()
-node.delete_first_node()
+# node.append_to_head_node(9)
+# node.append_to_head_node(8)
+# node.append_to_head_node(7)
+# node.delete_first_node()
+# node.delete_first_node()
+node.delete_last_node()
+node.delete_last_node()
+# node.delete_last_node()
 print(node.display())
 
 # print(node.data_at_index(2))
