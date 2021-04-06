@@ -41,11 +41,26 @@ class LinkedList:
         curr = self.head
         if curr.next is Node:
             return self
-        prev = curr.next
+        prev = curr
         while curr.next is not None:
             prev = curr
             curr = curr.next
         prev.next = None
+        return self
+
+    def delete_at_index(self, index):
+        curr = self.head
+        if curr.next is Node:
+            return self
+        # prev = curr
+        count = 1
+        while curr.next is not None:
+            prev = curr
+            curr = curr.next
+            if count == index:
+                prev.next = curr.next
+                return self
+            count += 1
         return self
 
     def data_at_index(self, index):
@@ -71,14 +86,16 @@ node = LinkedList()
 node.append_to_tail_node(10)
 node.append_to_tail_node(11)
 node.append_to_tail_node(12)
-# node.append_to_head_node(9)
-# node.append_to_head_node(8)
-# node.append_to_head_node(7)
+node.append_to_head_node(9)
+node.append_to_head_node(8)
+node.append_to_head_node(7)
 # node.delete_first_node()
 # node.delete_first_node()
-node.delete_last_node()
-node.delete_last_node()
 # node.delete_last_node()
+# node.delete_last_node()
+# node.delete_last_node()
+print(node.display())
+node.delete_at_index(6)
 print(node.display())
 
 # print(node.data_at_index(2))
