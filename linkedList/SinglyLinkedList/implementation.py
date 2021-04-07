@@ -30,6 +30,16 @@ class LinkedList:
 
         return self
 
+    def reverse(self):
+        curr = self.head
+        prev = None
+        while curr is not None:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+        self.head = prev
+
     def delete_first_node(self):
         curr = self.head
         if curr.next is None:
@@ -95,7 +105,8 @@ node.append_to_head_node(7)
 # node.delete_last_node()
 # node.delete_last_node()
 print(node.display())
-node.delete_at_index(6)
+# node.delete_at_index(6)
+node.reverse()
 print(node.display())
 
 # print(node.data_at_index(2))
