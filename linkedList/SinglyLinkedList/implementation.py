@@ -32,7 +32,7 @@ class LinkedList:
 
     def reverse(self):
         head = self.head
-        # prev = None
+        prev = None
         while curr is not None:
             next = curr.next
             curr.next = prev
