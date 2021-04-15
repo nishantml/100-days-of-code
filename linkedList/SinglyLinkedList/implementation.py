@@ -56,7 +56,11 @@ class LinkedList:
             prev = curr
             curr = curr.next
         prev.next = None
-        return self
+        return curr.val
+
+    def move_last_node_to_first(self):
+        last_node = self.delete_last_node()
+        return self.append_to_head_node(last_node)
 
     def delete_at_index(self, index):
         curr = self.head
@@ -74,8 +78,23 @@ class LinkedList:
 
     def delete_duplicate(self):
         curr = self.head
-        if curr.next is Node:
+        if curr.next is None or curr is None:
             return self
+        lst = []
+        curr = curr.next
+        while curr.next is not None:
+            if curr.next.val in lst:
+                curr.next = curr.next.next
+            else:
+                lst.append(curr.next.val)
+                curr = curr.next
+        return self
+
+    def delete_duplicate_in_sorted(self):
+        curr = self.head
+        if curr.next is None:
+            return self
+        curr = curr.next
         while curr.next is not None:
             if curr.val == curr.next.val:
                 curr.next = curr.next.next
@@ -124,7 +143,10 @@ node.append_to_head_node(7)
 # print(node.display())
 # node.delete_at_index(6)
 # node.reverse()
+# print(node.delete_duplicate_in_sorted())
 print(node.delete_duplicate())
+print(node.display())
+print(node.move_last_node_to_first())
 print(node.display())
 
 # print(node.data_at_index(2))
