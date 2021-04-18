@@ -121,20 +121,34 @@ class LinkedList:
             elems.append(cur_node.val)
         return elems
 
+    def check_palindrome(self):
+        lst = self.display()
+        num = 0
+        num = int("".join(map(str, lst)))
+        rev = int("".join(map(str, reversed(lst))))
+
+        if num == rev:
+            return True
+        else:
+            return False
+
+
 
 node = LinkedList()
-node.append_to_tail_node(10)
-node.append_to_tail_node(10)
-node.append_to_tail_node(10)
-node.append_to_tail_node(11)
-node.append_to_tail_node(12)
-node.append_to_tail_node(12)
-node.append_to_tail_node(12)
+# node.append_to_tail_node(10)
+# node.append_to_tail_node(10)
+# node.append_to_tail_node(10)
+# node.append_to_tail_node(11)
+# node.append_to_tail_node(12)
+# node.append_to_tail_node(12)
+# node.append_to_tail_node(12)
 node.append_to_head_node(9)
 node.append_to_head_node(9)
 node.append_to_head_node(9)
 node.append_to_head_node(8)
-node.append_to_head_node(7)
+node.append_to_head_node(9)
+node.append_to_head_node(9)
+node.append_to_head_node(9)
 # node.delete_first_node()
 # node.delete_first_node()
 # node.delete_last_node()
@@ -144,9 +158,10 @@ node.append_to_head_node(7)
 # node.delete_at_index(6)
 # node.reverse()
 # print(node.delete_duplicate_in_sorted())
-print(node.delete_duplicate())
+# print(node.delete_duplicate())
+# print(node.display())
+# print(node.move_last_node_to_first())
 print(node.display())
-print(node.move_last_node_to_first())
-print(node.display())
+print(node.check_palindrome())
 
 # print(node.data_at_index(2))
